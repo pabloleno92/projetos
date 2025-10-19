@@ -1,11 +1,17 @@
 #include <stdio.h>
-
-int main() {
-    int numero = 15;
-    if (numero > 10 && numero < 20) {
-        printf("%d está entre 10 e 20.\n", numero);
-    } else {
-        printf("%d não está entre 10 e 20.\n", numero);
+#include <locale.h>
+int main(){
+    setlocale(LC_ALL, "pt_BR.UTF-8");
+    int numeros[5] = {1, 2, 3, 4, 5};
+    int *ptr = numeros;
+    for(int i=0; i<5; i++){
+        printf("Números[%d] = %d\n", i, numeros[i]);
     }
+    for(int i=0; i<5; i++){
+        printf("*(ptr + %d) = %d\n", i, *(ptr + i));
+    }
+    printf("Pressione qualquer tecla para fechar...");
+    getchar();
+
     return 0;
 }
